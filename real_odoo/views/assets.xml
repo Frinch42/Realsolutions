@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="layout" inherit_id="web.layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <link rel="icon" href="/real_odoo/favicon" />
+        </xpath>
+    </template>
+
+    <template id="less_helpers" name="web_enterprise less helpers" inherit_id="web.less_helpers" priority='15'>
+        <xpath expr="link[last()]" position="after">
+            <t
+	        t-set="customer_module"
+	        t-value="request.env['real.odoo.tool'].sudo().config_get('customer_module')"
+            />
+            <t
+	        t-set="instance_type"
+	        t-value="request.env['real.odoo.tool'].sudo().config_get('instance_type')"
+            />
+            <t t-if="customer_module">
+                <link
+	            rel="stylesheet"
+	            type="text/less"
+	            t-attf-href="/{{customer_module}}/static/src/less/customer-{{instance_type}}.less"
+                />
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

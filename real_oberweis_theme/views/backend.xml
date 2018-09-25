@@ -1,0 +1,37 @@
+<odoo>
+
+    <template
+	id="assets_backend"
+	name="real_oberweis_theme.assets_backend"
+	inherit_id="web.assets_backend"
+    >
+        <xpath expr="." position="inside">
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	    <link
+		rel="stylesheet"
+		type="text/less"
+		href='/real_oberweis_theme/static/src/less/variables.less'
+		t-ignore="false"
+	    />
+        </xpath>
+    </template>
+
+    <!-- Customize header  -->
+    <template id="custom_header" inherit_id="website.layout" name="Custom Header">
+
+        <!-- Assign an id  -->
+        <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+             <attribute name="id">my_header</attribute>
+        </xpath>
+
+        <!-- Add an element after the top menu  -->
+        <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
+            <div class="container">
+                 <div class="alert alert-info mt16" role="alert">
+                     <strong>Welcome</strong> in our website!
+                 </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

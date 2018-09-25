@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+	id="material_frontend_theme"
+	name="material frontend theme assets"
+	inherit_id="web.assets_frontend"
+    >
+        <xpath expr="." position="inside">
+	    <link
+		rel="stylesheet"
+		type="text/less"
+		href="/real_oberweis_theme/static/src/less/style_frontend.less"
+		t-ignore="true"
+	    />
+        </xpath>
+    </template>
+       
+    <template
+        id="add_common_backend_theme"
+	inherit_id="web.assets_common"
+    >
+	<xpath expr="." position="inside"> 		
+	    <link
+		rel="stylesheet"
+		type="text/less"
+		href="/real_oberweis_theme/static/src/less/style_frontend.less"
+		t-ignore="true"
+	    />
+         </xpath>
+     </template>
+
+</odoo>
